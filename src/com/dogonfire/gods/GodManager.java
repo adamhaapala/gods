@@ -181,19 +181,19 @@ public class GodManager
 	{
 		float godMood = (float)godsConfig.getDouble(godName + ".Mood");
 		
-		if(godMood<-20)
+		if(godMood<-60)
 		{
 			return GodMood.ANGRY;						
 		}
-		else if(godMood<-10)
+		else if(godMood<-30)
 		{
 			return GodMood.DISPLEASED;			
 		}
-		else if(godMood<10)
+		else if(godMood<30)
 		{			
 			return GodMood.NEUTRAL;
 		}
-		else if(godMood<30)
+		else if(godMood<60)
 		{			
 			return GodMood.PLEASED;
 		}
@@ -207,13 +207,13 @@ public class GodManager
 
 		godMood += mood;
 		
-		if(godMood>40)
+		if(godMood>100)
 		{
-			godMood = 40;
+			godMood = 100;
 		}
-		else if(godMood<-40)
+		else if(godMood<-100)
 		{
-			godMood = -40;
+			godMood = -100;
 		}
 		
 		godsConfig.set(godName + ".Mood", godMood);
